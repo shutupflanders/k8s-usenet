@@ -92,20 +92,6 @@ spec:
         {{- else }}
         emptyDir: {}
         {{- end }}
-      - name: incomplete-downloads
-        {{- if .Values.persistence.incompleteDownloads.enabled }}
-        persistentVolumeClaim:
-          claimName: {{ if .Values.persistence.incompleteDownloads.existingClaim }}{{ .Values.persistence.incompleteDownloads.existingClaim }}{{- else }}{{ template "rutorrent.fullname" . }}-incomplete-downloads{{- end }}
-        {{- else }}
-        emptyDir: {}
-        {{- end }}
-      - name: watch
-        {{- if .Values.persistence.watch.enabled }}
-        persistentVolumeClaim:
-          claimName: {{ if .Values.persistence.watch.existingClaim }}{{ .Values.persistence.watch.existingClaim }}{{- else }}{{ template "rutorrent.fullname" . }}-watch{{- end }}
-        {{- else }}
-        emptyDir: {}
-        {{- end }}
       {{- range .Values.persistence.extraExistingClaimMounts }}
       - name: {{ .name }}
         persistentVolumeClaim:
