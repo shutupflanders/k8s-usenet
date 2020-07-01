@@ -1,7 +1,7 @@
 apiVersion: v2
 name: rutorrent
 description: ruTorrent is a front-end for the popular Bittorrent client rtorrent.
-home: https://transmissionbt.com/
+home: https://github.com/Novik/ruTorrent
 keywords:
   - rutorrent
   - bittorrent
